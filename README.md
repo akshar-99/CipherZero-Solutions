@@ -22,3 +22,8 @@ Then open http://localhost:5500.
 ## Hosting
 
 Any static host works (GitHub Pages, Netlify, Vercel, Cloudflare Pages): serve the repository root.
+
+## Cloudflare
+
+`wrangler.jsonc` tells Cloudflare Workers to publish the repository root as a static site
+(files listed in `.assetsignore` are not published).
