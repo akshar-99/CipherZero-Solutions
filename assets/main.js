@@ -166,11 +166,11 @@ function tabs(list){var ts=$$('[role=tab]',list);
   ts.forEach(function(t,i){t.addEventListener('click',function(){sel(t)});t.addEventListener('keydown',function(e){var k=e.key,j=null;if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%ts.length;if(k==='ArrowLeft'||k==='ArrowUp')j=(i-1+ts.length)%ts.length;if(k==='Home')j=0;if(k==='End')j=ts.length-1;if(j!==null){e.preventDefault();sel(ts[j],true)}})})}
 tabs($('.ind-tabs'));tabs($('.bel-tabs'));
 
-/* Partner filter */
+/* Platform filter */
 (function(){var btns=$$('.pfilter button'),lis=$$('#pgrid li'),note=$('#pcount');
   function pick(b){var c=b.dataset.cat,n=0;btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
     lis.forEach(function(li){var on=c==='all'||li.dataset.cats.split(' ').indexOf(c)>-1;li.hidden=!on;if(on){n++;li.style.animation='none';li.offsetWidth;li.style.animation=''}});
-    note.textContent=c==='all'?'':'Showing '+n+' partners for '+b.firstChild.textContent+'.'}
+    note.textContent=c==='all'?'':'Showing '+n+' platforms for '+b.firstChild.textContent+'.'}
   btns.forEach(function(b){b.addEventListener('click',function(){pick(b)})});
 })();
 
